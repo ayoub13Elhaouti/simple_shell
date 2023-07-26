@@ -57,9 +57,9 @@ int	main(int	argc, char	**argv, char	*envp[])
 	signal(SIGINT, sig_tracker);
 	while (1)
 	{
-		buffer_cleaner(cmd);
-		buffer_cleaner(pth_list);
-		free(pth_cmd);
+		/* buffer_cleaner(cmd); */
+		/* buffer_cleaner(pth_list); */
+		/* free(pth_cmd); */
 		prompt();
 		line_size = getline(&ln, &buffer_size, stdin);
 		if (line_size < 0)
