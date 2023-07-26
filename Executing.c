@@ -11,14 +11,14 @@ void	buffer_cleaner(char	**list)
 {
 	int	count = 0;
 
-	if (list == NULL || !list)
+	if (list == NULL)
 		return;
 	while (list[count])
 	{
 		free(list[count]);
 		count++;
 	}
-	free(list);
+	free(list[count]);
 }
 
 /**
@@ -41,7 +41,6 @@ void	executin_func(char	*command, char	**ar_cmd)
 	else if (child == 0)
 	{
 		execve(command, ar_cmd, env);
-		free(command);
 		buffer_cleaner(ar_cmd);
 		exit(98);
 	}
