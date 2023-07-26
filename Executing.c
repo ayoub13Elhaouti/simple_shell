@@ -18,7 +18,6 @@ void	buffer_cleaner(char	**list)
 		free(list[count]);
 		count++;
 	}
-	free(list[count]);
 }
 
 /**
